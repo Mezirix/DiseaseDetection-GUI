@@ -1,4 +1,60 @@
-<!doctype html>
-<title>Prediction Result</title>
-<h1>Predicted Class: {{ prediction }}</h1>
-<a href="/">Upload another image</a>
+<!-- result.html -->
+<!-- Disease Detection Result HTML Template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <style>
+    body {
+      background-image: url("{{ url_for('static', filename='images/leaf_background1.jpg') }}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #004d00;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .result-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px 50px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .result-container h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .result-container a {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #006400;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .result-container a:hover {
+      background-color: #228B22;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-container">
+    <h1>Predicted Class: {{ prediction }}</h1>
+    <a href="{{ url_for('upload_image') }}">Upload Another Image</a>
+  </div>
+</body>
+</html>
