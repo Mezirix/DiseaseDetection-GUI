@@ -7,7 +7,8 @@ import os
 app = Flask(__name__)
 
 # Load the saved model
-model_path = "C:/Users/Chimeziri Anyanwu/OneDrive/Web Dev. Tools/AIDA Projects/DiseaseDetection GUI/my_Updated_DenseNet_Model_final.keras"
+model_path = "Models/my_Updated_DenseNet_Model_final.keras"
+# model_path = "C:/Users/Chimeziri Anyanwu/OneDrive/Web Dev. Tools/AIDA Projects/DiseaseDetection GUI/my_Updated_DenseNet_Model_final.keras"
 model = load_model(model_path)
 
 # Define class labels (unified_class_indices)
